@@ -8,4 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class Karyawan extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'user_id',
+        'ssid',
+        'password',
+        'nama',
+        'kode',
+        'ipAddress'
+    ];
 }

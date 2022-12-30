@@ -1,4 +1,4 @@
-<div class="flex flex-col">
+<div class="flex flex-col transition-all ">
     <div class="flex flex-wrap justify-between">
 
         <div class="flex flex-col">
@@ -6,10 +6,18 @@
             <p class="text-xs text-gray-400">Ini adalah daftar karyawan pada usaha tambak anda.</p>
         </div>
 
-        <button class="rounded-lg text-sm px-4 py-2 text-white bg-indigo-500 hover:bg-indigo-600">Tambah Data</button>
+        <button wire:click='toggleAddForm'
+            class="{{ $showAddForm ? 'border-2 border-amber-400 text-amber-500 hover:text-amber-400 hover:border-amber-200' : 'bg-indigo-500 hover:bg-indigo-400 text-white' }} rounded-lg text-sm px-4 py-2">{{
+            $showAddForm ? 'Batal' : 'Tambah
+            Data Karyawan'}}</button>
     </div>
 
     <hr class="block my-5">
+
+    @if ($showAddForm)
+    @livewire('create-karyawan')
+    <hr class="block my-9">
+    @endif
 
     <table class="table-auto">
         <thead>
@@ -30,8 +38,8 @@
                 <td>12345678</td>
                 <td>192.168.4.1</td>
                 <td class="flex flex-wrap gap-2">
-                    <button class="rounded bg-blue-500 hover:bg-blue-600 text-white p-2">edit</button>
-                    <button class="rounded bg-red-500 hover:bg-red-600 text-white p-2">delete</button>
+                    <button class="rounded text-blue-500 hover:text-blue-600 hover:bg-indigo-50 p-2">edit</button>
+                    <button class="rounded text-red-500 hover:text-red-600 hover:bg-indigo-50 p-2">delete</button>
                 </td>
             </tr>
         </tbody>
