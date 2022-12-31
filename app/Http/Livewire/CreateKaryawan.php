@@ -12,8 +12,8 @@ class CreateKaryawan extends Component
 
     use LivewireAlert;
 
-    public $nama = 'Kaco';
-    public $kode = 'dev001';
+    public $nama = '';
+    public $kode = '';
     public $ssid = 'SmartScaller.Net';
     public $ipAddress = '192.168.4.1';
     public $password = '12345678';
@@ -43,8 +43,11 @@ class CreateKaryawan extends Component
         $validatedData['user_id'] = Auth::id();
 
         $karyawan = Karyawan::where('kode', $validatedData['kode'])->first();
-        if (!$karyawan) {
+        // dd($karyawan);
+        if ($karyawan == null) {
             Karyawan::create($validatedData);
+            $this->emit('karyawan-created');
+
             $this->alert('success', 'Data berhasil diinput');
         } else {
             $this->alert('error', 'Data karyawan dengan kode alat ' . $validatedData['kode'] . ' sudah ada.');

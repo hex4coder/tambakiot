@@ -31,17 +31,19 @@
             </tr>
         </thead>
         <tbody>
+            @foreach ($data as $k)
             <tr>
-                <td>Kaco Jirris</td>
-                <td>dev001</td>
-                <td>SmartScaller.Net</td>
-                <td>12345678</td>
-                <td>192.168.4.1</td>
+                <td>{{$k->nama}}</td>
+                <td>{{$k->kode}}</td>
+                <td>{{$k->ssid}}</td>
+                <td>{{$k->password}}</td>
+                <td>{{$k->ipAddress}}</td>
                 <td class="flex flex-wrap gap-2">
                     <button class="rounded text-blue-500 hover:text-blue-600 hover:bg-indigo-50 p-2">edit</button>
                     <button class="rounded text-red-500 hover:text-red-600 hover:bg-indigo-50 p-2">delete</button>
                 </td>
             </tr>
+            @endforeach
         </tbody>
     </table>
 
