@@ -14,14 +14,23 @@ class ListKaryawan extends Component
     use LivewireAlert;
 
     public $showAddForm = false;
+    public $showEditForm = false;
     public $perPage = 5;
     public $idToDelete = -1;
+    public $idToEdit = -1;
     protected $paginationTheme = 'tailwind';
     protected $listeners = [
         'karyawan-created' => '$refresh',
         'karyawan-created' => 'karyawanCreated',
-        'deleteConfirm'
+        'deleteConfirm',
+        'karyawan-updated' => 'karyawanUpdated'
     ];
+
+    public function karyawanUpdated()
+    {
+        $this->idToEdit = -1;
+        $this->showEditForm = false;
+    }
 
     public function deleteConfirm()
     {
@@ -50,6 +59,16 @@ class ListKaryawan extends Component
     public function toggleAddForm()
     {
         $this->showAddForm = !$this->showAddForm;
+    }
+
+    public function toggleEditForm($id)
+    {
+        $this->idToEdit = $id;
+        if ($id != -1) {
+            $this->showEditForm = true;
+        } else {
+            $this->showEditForm = false;
+        }
     }
 
     public function deleteKaryawan($id)
