@@ -17,4 +17,9 @@ class Karyawan extends Model
         'kode',
         'ipAddress'
     ];
+
+    public function bos()
+    {
+        return $this->belongsTo(User::class);
+    }
 }
