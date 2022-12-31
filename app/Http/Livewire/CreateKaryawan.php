@@ -26,6 +26,15 @@ class CreateKaryawan extends Component
         'password' => 'required|min:8'
     ];
 
+    public function resetForm()
+    {
+        $this->nama = '';
+        $this->kode = '';
+        $this->ssid = 'SmartScaller.Net';
+        $this->ipAddress = '192.168.4.1';
+        $this->password = '12345678';
+    }
+
     public function updated($propertyName)
     {
         $this->validateOnly($propertyName);
@@ -47,8 +56,8 @@ class CreateKaryawan extends Component
         if ($karyawan == null) {
             Karyawan::create($validatedData);
             $this->emit('karyawan-created');
-
             $this->alert('success', 'Data berhasil diinput');
+            $this->resetForm();
         } else {
             $this->alert('error', 'Data karyawan dengan kode alat ' . $validatedData['kode'] . ' sudah ada.');
         }

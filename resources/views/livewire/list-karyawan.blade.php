@@ -39,12 +39,20 @@
                 <td>{{$k->password}}</td>
                 <td>{{$k->ipAddress}}</td>
                 <td class="flex flex-wrap gap-2">
-                    <button class="rounded text-blue-500 hover:text-blue-600 hover:bg-indigo-50 p-2">edit</button>
-                    <button class="rounded text-red-500 hover:text-red-600 hover:bg-indigo-50 p-2">delete</button>
+                    <button class="rounded text-blue-500 hover:text-blue-600 hover:bg-indigo-50 p-2"><i
+                            class="fa fa-edit"></i></button>
+                    <button class="rounded text-red-500 hover:text-red-600 hover:bg-indigo-50 p-2"><i
+                            class="fa fa-trash"></i></button>
                 </td>
             </tr>
             @endforeach
+
         </tbody>
+        <tfoot>
+
+        </tfoot>
     </table>
+    <hr class="my-5">
+    {{$data->links()}}
 
 </div>
