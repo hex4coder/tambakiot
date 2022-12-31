@@ -41,7 +41,8 @@
                 <td class="flex flex-wrap gap-2">
                     <button class="rounded text-blue-500 hover:text-blue-600 hover:bg-indigo-50 p-2"><i
                             class="fa fa-edit"></i></button>
-                    <button class="rounded text-red-500 hover:text-red-600 hover:bg-indigo-50 p-2"><i
+                    <button wire:click='deleteKaryawan({{$k->id}})'
+                        class="rounded text-red-500 hover:text-red-600 hover:bg-indigo-50 p-2"><i
                             class="fa fa-trash"></i></button>
                 </td>
             </tr>
