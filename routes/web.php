@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\KaryawanController;
+use App\Http\Controllers\PanenController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,6 +20,7 @@ Route::get('/', function () {
 });
 
 Route::get('/karyawan', [KaryawanController::class, 'index'])->name('karyawan');
+Route::get('/panen', [PanenController::class, 'index'])->name('panen');
 
 Route::middleware([
     'auth:sanctum',

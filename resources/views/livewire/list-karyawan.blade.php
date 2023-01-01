@@ -1,10 +1,9 @@
 <div class="flex flex-col transition-all ">
     <div class="flex flex-wrap justify-between">
 
-        <div class="flex flex-col">
-            <h3 class="text-sm font-bold">Data Karyawan</h3>
-            <p class="text-xs text-gray-400">Ini adalah daftar karyawan pada usaha tambak anda.</p>
-        </div>
+
+        @livewire('data-title', ['title' => 'Data Karyawan', 'description' => 'Ini adalah daftar karyawan pada usaha
+        tambak anda.'])
 
         @if ($showEditForm)
         {{-- edit form --}}
