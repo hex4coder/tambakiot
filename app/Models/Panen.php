@@ -21,4 +21,9 @@ class Panen extends Model
     {
         return $this->belongsTo(Karyawan::class);
     }
+
+    public function total()
+    {
+        return "Rp. " . $this->harga_per_kg * $this->jumlah_kg . ", -";
+    }
 }
