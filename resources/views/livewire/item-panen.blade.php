@@ -1,11 +1,16 @@
 <div>
-    <div class="flex flex-col rounded-sm shadow-sm">
+    <div class="flex flex-col rounded-lg overflow-hidden bg-white shadow-lg">
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrGm8bt9pGrE6magpdf9rIsnYMzQ1kGZfrTzR4AozyYA&s" alt="kamu nanya?">
         <div class="flex flex-col p-7">
-            <span class="text-sm text-indigo-600">Kaco Lamang</span>
-            <span class="text-xs text-gray-400">Beberapa tahun yang lalu</span>
+            <span class="text-sm text-indigo-600">{{$item->karyawan->nama}}</span>
+            <span class="text-xs text-gray-400">{{$item->updated_at->diffForHumans()}}</span>
             <hr class="my-3">
-            <span class="text-xs text-gray-600"></span>
+            <span class="text-base font-bold">Rp. {{$item->harga_per_kg}}, - / Kg</span>
+            <span class="text-sm font-medium"><span class="text-xs">Sisa</span> {{$item->jumlah_kg}} Kg.</span>
+            <hr class="my-3">
+            <span class="text-xs text-gray-600 text-justify">
+                {{$item->keterangan}}
+            </span>
         </div>
     </div>
 </div>

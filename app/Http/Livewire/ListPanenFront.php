@@ -2,12 +2,17 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\Panen;
 use Livewire\Component;
 
 class ListPanenFront extends Component
 {
     public function render()
     {
-        return view('livewire.list-panen-front');
+        $data = Panen::get();
+
+        return view('livewire.list-panen-front', [
+            'data' => $data,
+        ]);
     }
 }

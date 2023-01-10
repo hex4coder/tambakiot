@@ -6,6 +6,9 @@ use Livewire\Component;
 
 class ItemPanen extends Component
 {
+
+    public $item;
+
     public function render()
     {
         return view('livewire.item-panen');
