@@ -20,6 +20,16 @@
             </div>
 
             <div class="mt-4">
+                <x-jet-label for="alamat" value="{{ __('Alamat') }}" />
+                <x-jet-input id="alamat" class="block mt-1 w-full" type="text" name="alamat" :value="old('alamat')" required />
+            </div>
+
+            <div class="mt-4">
+                <x-jet-label for="nomorhp" value="{{ __('Nomor HP') }}" />
+                <x-jet-input id="nomorhp" class="block mt-1 w-full" type="text" name="nomorhp" :value="old('nomorhp')" required />
+            </div>
+
+            <div class="mt-4">
                 <x-jet-label for="password" value="{{ __('Password') }}" />
                 <x-jet-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="new-password" />
             </div>

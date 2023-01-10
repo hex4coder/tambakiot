@@ -54,10 +54,10 @@
                     <td>{{$k->ipAddress}}</td>
                     <td class="flex flex-wrap gap-2">
                         <button wire:click='toggleEditForm({{$k->id}})'
-                            class="rounded text-blue-500 hover:text-blue-600 hover:bg-indigo-50 p-2"><i
+                            class="transition-all rounded text-blue-500  hover:bg-indigo-400 hover:text-white px-2"><i
                                 class="fa fa-edit"></i></button>
                         <button wire:click='deleteKaryawan({{$k->id}})'
-                            class="rounded text-red-500 hover:text-red-600 hover:bg-indigo-50 p-2"><i
+                            class="transition-all rounded text-red-500 hover:text-white hover:bg-red-400 px-2"><i
                                 class="fa fa-trash"></i></button>
                     </td>
                 </tr>
