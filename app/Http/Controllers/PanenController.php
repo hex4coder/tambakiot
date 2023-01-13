@@ -12,8 +12,10 @@ class PanenController extends Controller
         return view('panen');
     }
 
-    public function get(Request $request)
+    public function get()
     {
-        return Panen::all()->toJson();
+        return Panen::with(['karyawan' => function($query) {
+            $query->select('id','nama');
+        }])->orderBy('updated_at', 'desc')->get()->toJson();
     }
 }

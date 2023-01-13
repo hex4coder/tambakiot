@@ -21,6 +21,9 @@ Route::post('/karyawan/login', [KaryawanController::class, 'login']);
 
 Route::get('/panen', [PanenController::class, 'get']);
 
+Route::get('/check', function() {
+    return 'All is well';
+});
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
