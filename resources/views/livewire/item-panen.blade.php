@@ -1,6 +1,6 @@
 <div>
     <div class="flex flex-col rounded-lg overflow-hidden bg-white shadow-lg">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrGm8bt9pGrE6magpdf9rIsnYMzQ1kGZfrTzR4AozyYA&s" alt="kamu nanya?">
+        <img src="{{$item->url_foto}}" alt="kamu nanya?">
         <div class="flex flex-col p-7">
             <span class="text-sm text-indigo-600">{{$item->karyawan->nama}}</span>
             <span class="text-xs text-gray-400">{{$item->updated_at->diffForHumans()}}</span>

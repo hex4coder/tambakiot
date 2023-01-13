@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'Tambak IOT Web') }}</title>
 
     <!-- Fonts -->
     <link rel="stylesheet" href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap">
@@ -21,6 +21,9 @@
 
     <!-- Styles -->
     @livewireStyles
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://raw.githubusercontent.com/imhvost/chart-utils/master/dist/chart-utils.min.js"></script>
 </head>
 
 <body class="font-sans antialiased">

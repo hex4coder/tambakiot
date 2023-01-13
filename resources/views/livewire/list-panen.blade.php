@@ -29,7 +29,9 @@
             <tbody>
                 @foreach ($data as $k)
                     <tr>
-                        <td>{{ $k->url_foto }}</td>
+                        <td>
+                            <img src="{{ $k->url_foto }}" alt="ini foto tambak" class="w-56 rounded-lg">
+                        </td>
                         <td>{{ $k->karyawan->nama }}</td>
                         <td>{{ $k->updated_at->diffForHumans() }}</td>
                         <td>{{ $k->jumlah_kg }} Kg</td>
