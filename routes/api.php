@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\KaryawanController;
 use App\Http\Controllers\PanenController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -15,7 +16,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/karyawan', [KaryawanController::class, 'get']);
+Route::post('/karyawan/login', [KaryawanController::class, 'login']);
+
 Route::get('/panen', [PanenController::class, 'get']);
+
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
