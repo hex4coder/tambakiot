@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BosController;
 use App\Http\Controllers\KaryawanController;
 use App\Http\Controllers\PanenController;
 use Illuminate\Http\Request;
@@ -16,10 +17,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/get-bos/{id}', [BosController::class, 'getBos']);
+
 Route::get('/karyawan', [KaryawanController::class, 'get']);
 Route::post('/karyawan/login', [KaryawanController::class, 'login']);
 
 Route::get('/panen', [PanenController::class, 'get']);
+Route::post('/panen', [PanenController::class, 'post']);
+Route::delete('/panen/{id}', [PanenController::class, 'delete']);
 
 Route::get('/check', function() {
     return 'All is well';
