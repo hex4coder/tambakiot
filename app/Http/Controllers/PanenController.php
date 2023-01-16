@@ -23,8 +23,9 @@ class PanenController extends Controller
             $file_path = $panen->url_foto;
             $rep = URL::to('/') . "//storage//";
             $file_path = str_replace($rep, '', $file_path);
+            $file_path = storage_path('app/public/') . $file_path;
             
-            if(!Storage::delete($file_path)) {
+            if(!@unlink($file_path)) {
                 return 'foto gagal';
             }
 
@@ -46,7 +47,7 @@ class PanenController extends Controller
         $foto = $request->file('foto');
 
         // Menyimpan gambar yang dikirim (foto udang) kedalam database dan folder storage
-        $lokasi = $foto->store('/foto', ['disk' => 'public']);
+        $lokasi = $foto->store('/public/foto', ['disk' => 'public']);
 
         if(!$lokasi) {
             return 'upload foto gagal';
