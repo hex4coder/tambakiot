@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('panens', function (Blueprint $table) {
             $table->id();
             $table->foreignId('karyawan_id');
-            $table->integer('jumlah_kg');
+            $table->unsignedDouble('jumlah_kg');
             $table->integer('harga_per_kg');
             $table->text('url_foto');
             $table->text('keterangan');

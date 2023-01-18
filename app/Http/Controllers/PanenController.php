@@ -21,8 +21,8 @@ class PanenController extends Controller
         if($panen) {
             // hapus foto terlebih dahulu
             $file_path = $panen->url_foto;
-            $rep = URL::to('/') . "//storage//";
-            $file_path = str_replace($rep, '', $file_path);
+            $arr = explode('//', $file_path);
+            $file_path = $arr[3];            
             $file_path = storage_path('app/public/') . $file_path;
             
             if(!@unlink($file_path)) {

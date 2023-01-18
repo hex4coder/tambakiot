@@ -19,9 +19,10 @@ use Illuminate\Support\Facades\URL;
 
 Route::get('/', function () {
     
-    echo storage_path('app/public') ;
-    
-    //return view('welcome');
+    // echo storage_path('app/public') ;
+    echo ini_get('post_max_size');
+    echo ini_get('upload_max_filesize');
+    // return view('welcome');
 });
 
 Route::get('/karyawan', [KaryawanController::class, 'index'])->name('karyawan');
